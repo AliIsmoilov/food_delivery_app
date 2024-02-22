@@ -1,0 +1,30 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "restaurant_service_lib",
+    srcs = ["main.go"],
+    data = [
+        ".env",
+    ],
+    importpath = "monorepo/src/restaurant_service",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//src/libs/log",
+        "//src/restaurant_service/configs",
+        "//src/restaurant_service/pkg/db",
+        "//src/restaurant_service/server",
+        "//src/restaurant_service/service",
+        "//src/restaurant_service/storage",
+        "//src/restaurant_service/tracer",
+        "@org_uber_go_fx//:fx",
+        "@org_uber_go_fx//fxevent",
+        "@org_uber_go_zap//:zap",
+        "@org_uber_go_zap//zapcore",
+    ],
+)
+
+go_binary(
+    name = "restaurant_service",
+    embed = [":restaurant_service_lib"],
+    visibility = ["//visibility:public"],
+)

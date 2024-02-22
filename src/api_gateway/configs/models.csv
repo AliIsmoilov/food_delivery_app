@@ -1,0 +1,10 @@
+p, any, /api/*, GET 
+
+p, unauthorized, /api/restaurant/, POST
+p, unauthorized, /api/restaurant/, GET
+
+p, unauthorized, /api/category/, POST
+p, unauthorized, /api/category/, GET
+
+p, unauthorized, /api/item/, POST
+p, unauthorized, /api/restaurant/items/, GET

@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package restaurant_service;
+
+service RestaurantService {
+    rpc CreateRestaurant(Restaurant) returns (PrimaryKey) {}
+    rpc ListRestaurants(ListRestaurantsReq) returns (ListRestaurantsResp) {}
+
+    rpc CreateCategory(Category) returns (PrimaryKey) {}
+    rpc ListCategories(ListCategoriesReq) returns (ListCategoriesResp) {}
+
+    rpc CreateItem(Item) returns (PrimaryKey) {}
+    rpc RestaurantItemsGroupedByCategory(RestaurantItemsGroupedByCategoryReq) returns (RestaurantItemsGroupedByCategoryResp) {}
+}
+
+message Restaurant{
+    string id = 1;
+    string name = 2;
+    string address = 3;
+    float lat = 4;
+    float lon = 5;
+    string photo = 6;
+    string phone_number = 7;
+}
+
+message Empty { 
+}
+
+message PrimaryKey {
+    string id = 1;
+}
+
+message ListRestaurantsResp {
+    int32 count = 1;
+    repeated Restaurant restaurants = 2;
+}
+
+message ListRestaurantsReq {
+
+}
+
+message Category {
+    string id = 1;
+    string name = 2;
+}
+
+message ListCategoriesResp {
+    int32 count = 1;
+    repeated Category categories = 2;
+}
+
+message ListCategoriesReq {
+
+}
+
+message Item {
+    string id = 1;
+    string name = 2;
+    string category_id = 3;
+    string restaurant_id = 4;
+    string description = 5;
+    string photo = 6;
+    int32 price = 7;
+}
+
+message RestaurantItemsGroupedByCategoryReq {
+    string restaurant_id = 1;
+}
+
+message RestaurantItemsGroupedByCategoryResp {
+    repeated RestaurantItemsModel items = 1;
+}
+
+message RestaurantItemsModel {
+    Category category = 1;
+    repeated Item items = 2;
+}

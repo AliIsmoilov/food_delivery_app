@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS categories(
+    id UUID PRIMARY KEY,
+    name VARCHAR(256) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NULL,
+    deleted_at TIMESTAMP WITH TIME ZONE DEFAULT NULL
+);
+
+CREATE TABLE IF NOT EXISTS items(
+    id UUID PRIMARY KEY NOT NULL,
+    name VARCHAR(256) NOT NULL,
+    category_id UUID NOT NULL REFERENCES categories(id),
+    restaurant_id UUID NOT NULL REFERENCES restaurants(id),
+    description TEXT,
+    photo TEXT,
+    price INTEGER,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NULL,
+    deleted_at TIMESTAMP WITH TIME ZONE DEFAULT NULL
+);

@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "tracing",
+    srcs = ["mux.go"],
+    importpath = "monorepo/src/api_gateway/pkg/tracing",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//src/api_gateway/configs",
+        "//src/api_gateway/middleware",
+        "@com_github_gorilla_mux//:mux",
+        "@com_github_opentracing_contrib_go_stdlib//nethttp",
+        "@com_github_opentracing_opentracing_go//:opentracing-go",
+    ],
+)
+
+alias(
+    name = "go_default_library",
+    actual = ":tracing",
+    visibility = ["//visibility:public"],
+)

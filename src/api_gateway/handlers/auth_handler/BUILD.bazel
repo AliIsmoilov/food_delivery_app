@@ -1,0 +1,26 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "auth_handler",
+    srcs = ["auth_handle.go"],
+    importpath = "monorepo/src/api_gateway/handlers/auth_handler",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//src/api_gateway/configs",
+        "//src/api_gateway/dependencies",
+        "//src/api_gateway/models",
+        "//src/api_gateway/utils",
+        "//src/idl/auth_service",
+        "//src/libs/etc",
+        "//src/libs/log",
+        "//src/libs/redis",
+        "//src/libs/utils",
+        "@com_github_opentracing_opentracing_go//:opentracing-go",
+    ],
+)
+
+alias(
+    name = "go_default_library",
+    actual = ":auth_handler",
+    visibility = ["//visibility:public"],
+)

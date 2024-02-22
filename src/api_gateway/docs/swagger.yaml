@@ -1,0 +1,66 @@
+basePath: /v2
+definitions:
+  models.Response:
+    properties:
+      data: {}
+      error:
+        type: boolean
+    type: object
+  models.Restaurant:
+    properties:
+      adress:
+        type: string
+      id:
+        type: string
+      latitude:
+        type: number
+      longitude:
+        type: number
+      name:
+        type: string
+      phone_number:
+        type: string
+      photo:
+        type: string
+    type: object
+host: petstore.swagger.io
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server Petstore server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /restaurant/:
+    post:
+      consumes:
+      - application/json
+      description: Create Restaurant
+      parameters:
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.Restaurant'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.Restaurant'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.Response'
+      summary: Create Restaurant
+      tags:
+      - Restaurant
+swagger: "2.0"
