@@ -104,3 +104,54 @@ func generateNewRefreshToken() (string, error) {
 func ParseRefreshToken(refreshToken string) (int64, error) {
 	return strconv.ParseInt(strings.Split(refreshToken, ".")[1], 0, 64)
 }
+
+// GenerateNewCustomerTokens func for generate a new Access & Refresh tokens.
+// Credentials intentionally added func method signature in case of needed
+func GenerateNewCustomerTokens(id string, credentials map[string]string) (*Tokens, error) {
+	// Generate JWT Access token.
+	accessToken, err := generateNewCustomerAccessToken(id, credentials)
+	if err != nil {
+		// Return token generation error.
+		return nil, err
+	}
+
+	// Generate JWT Refresh token.
+	refreshToken, err := generateNewRefreshToken()
+	if err != nil {
+		// Return token generation error.
+		return nil, err
+	}
+
+	return &Tokens{
+		Access:  accessToken,
+		Refresh: refreshToken,
+	}, nil
+}
+
+func generateNewCustomerAccessToken(id string, credentials map[string]string) (string, error) {
+
+	conf := configs.Config()
+	// Create a new claims.
+	claims := jwt.MapClaims{}
+
+	// Set public claims:
+	claims["id"] = id
+	claims["company_id"] = credentials["company_id"]
+	claims["device_id"] = credentials["device_id"]
+	claims["device_name"] = credentials["device_name"]
+
+	claims["role"] = "customer"
+	const day = time.Hour * 24
+
+	// Create a new JWT access token with claims.
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+
+	// Generate token.
+	t, err := token.SignedString([]byte(conf.JWTSecretKey))
+	if err != nil {
+		// Return error, it JWT token generation failed.
+		return "", err
+	}
+
+	return t, nil
+}

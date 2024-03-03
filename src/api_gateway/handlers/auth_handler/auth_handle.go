@@ -25,6 +25,9 @@ type AuthHandlers interface {
 	ResetPassword(w http.ResponseWriter, r *http.Request)
 	VerfyCodeHandler(w http.ResponseWriter, r *http.Request)
 	SendCodeHandler(w http.ResponseWriter, r *http.Request)
+
+	// Customer
+	CustomerSignUp(w http.ResponseWriter, r *http.Request)
 }
 
 type authHandler struct {
@@ -96,7 +99,7 @@ func (ah *authHandler) StuffLogin(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	u.WriteJSON(w, models.StaffLoginResponse{
+	u.WriteJSON(w, models.LoginResponse{
 		ID:           res.Id,
 		AccessToken:  tokens.Access,
 		RefreshToken: tokens.Refresh,

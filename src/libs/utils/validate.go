@@ -27,11 +27,11 @@ func IsEmailValid(e string) bool {
 	return true
 }
 
-var phoneRegex = regexp.MustCompile(`(0|\\+62|062|62)[0-9]+$`)
+var uzbPhoneRegex = regexp.MustCompile(`^[+]{1}99{1}[0-9]{10}$`)
 
-// IsPhoneValid
+// IsPhoneValid validates phone number for Uzbekistan
 func IsPhoneValid(p string) bool {
-	return phoneRegex.MatchString(p)
+	return uzbPhoneRegex.MatchString(p)
 }
 
 // Validate for both email ad phone

@@ -39,7 +39,7 @@ func main() {
 	// }(log)
 
 	//Initialize database, make a connection with postgres
-	connDB, err := db.Init(*config)
+	connDB, err := db.Init(config)
 	if err != nil {
 		fmt.Println("failed to connect with db: ", err)
 	}

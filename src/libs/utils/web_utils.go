@@ -166,3 +166,18 @@ func WriteJSONWithSuccess(w http.ResponseWriter, data interface{}) {
 	w.WriteHeader(http.StatusOK)
 	w.Write(bytes)
 }
+
+func HandleInternalWithMessage(w http.ResponseWriter, err error, message string) error {
+	if err == nil {
+		return nil
+	}
+
+	log.Println(message+" ", err)
+	w.WriteHeader(http.StatusInternalServerError)
+	writeJSON(w, response{Error: true,
+		Data: errorInfo{
+			Status:  http.StatusInternalServerError,
+			Message: message + " " + err.Error(),
+		}})
+	return err
+}

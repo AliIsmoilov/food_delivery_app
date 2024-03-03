@@ -8,3 +8,6 @@ p, unauthorized, /api/category/, GET
 
 p, unauthorized, /api/item/, POST
 p, unauthorized, /api/restaurant/items/, GET
+
+
+p, unauthorized, /api/customer/sign-up-login/, POST
