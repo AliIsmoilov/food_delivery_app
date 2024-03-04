@@ -32,3 +32,4 @@ proto-gen:
 	bazel run //src/idl/auth_service:auth_service_go_proto_link
 	bazel run //src/idl/customer_service:customer_go_proto_link
 	bazel run //src/idl/restaurant_service:restaurant_go_proto_link
+	bazel run //src/idl/order_service:order_go_proto_link

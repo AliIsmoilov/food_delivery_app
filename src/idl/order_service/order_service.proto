@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package order_service;
+
+service OrderService {
+    // rpc CreateOrder(Empty) returns (Empty) {}
+    // rpc ListRestaurants(ListRestaurantsReq) returns (ListRestaurantsResp) {}
+
+    // rpc CreateCategory(Category) returns (PrimaryKey) {}
+    // rpc ListCategories(ListCategoriesReq) returns (ListCategoriesResp) {}
+
+    // rpc CreateItem(Item) returns (PrimaryKey) {}
+    // rpc RestaurantItemsGroupedByCategory(RestaurantItemsGroupedByCategoryReq) returns (RestaurantItemsGroupedByCategoryResp) {}
+}
+
+message Empty { 
+}
