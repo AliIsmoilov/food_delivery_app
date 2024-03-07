@@ -41,6 +41,8 @@ type Configuration struct {
 	AuthServicePort       int
 	RestaurantServiceHost string
 	RestaurantServicePort int
+	OrderServiceHost      string
+	OrderServicePort      int
 
 	CasbinConfigPath    string
 	MiddlewareRolesPath string
@@ -85,6 +87,8 @@ func load() *Configuration {
 	config.AuthServicePort = v.GetInt("AUTH_SERVICE_PORT")
 	config.RestaurantServiceHost = v.GetString("RESTAURANT_SERVICE_HOST")
 	config.RestaurantServicePort = v.GetInt("RESTAURANT_SERVICE_PORT")
+	config.OrderServiceHost = v.GetString("ORDER_SERVICE_HOST")
+	config.OrderServicePort = v.GetInt("ORDER_SERVICE_PORT")
 	config.CtxTimeout = v.GetInt("CONTEXT_TIMEOUT")
 	return &config
 }

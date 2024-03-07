@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"monorepo/src/api_gateway/configs"
 	"monorepo/src/idl/auth_service"
+	"monorepo/src/idl/order_service"
 	"monorepo/src/idl/restaurant_service"
 	"sync"
 
@@ -16,8 +17,10 @@ import (
 var (
 	authServiceClient           auth_service.AuthServiceClient
 	restaurantServiceClient     restaurant_service.RestaurantServiceClient
+	orderServiceClient          order_service.OrderServiceClient
 	onceAuthServiceClient       sync.Once
 	onceRestaurantServiceClient sync.Once
+	onceOrderServiceClient      sync.Once
 )
 
 // AuthServiceClient loads AuthServiceClient using atomic pattern
@@ -34,6 +37,13 @@ func RestauranticeClient() restaurant_service.RestaurantServiceClient {
 		restaurantServiceClient = loadRestaurantServiceClient()
 	})
 	return restaurantServiceClient
+}
+
+func OrderServiceClient() order_service.OrderServiceClient {
+	onceOrderServiceClient.Do(func() {
+		orderServiceClient = loadOrderServiceClient()
+	})
+	return orderServiceClient
 }
 
 func loadAuthServiceClient() auth_service.AuthServiceClient {
@@ -76,4 +86,25 @@ func loadRestaurantServiceClient() restaurant_service.RestaurantServiceClient {
 	}
 
 	return restaurant_service.NewRestaurantServiceClient(connRestaurant)
+}
+
+func loadOrderServiceClient() order_service.OrderServiceClient {
+	tracer := opentracing.GlobalTracer()
+	conf := configs.Config()
+	connOrder, err := grpc.Dial(
+		fmt.Sprintf("%s:%d", conf.OrderServiceHost, conf.OrderServicePort),
+		grpc.WithTransportCredentials(
+			insecure.NewCredentials()),
+		grpc.WithUnaryInterceptor(
+			otgrpc.OpenTracingClientInterceptor(tracer)),
+		grpc.WithStreamInterceptor(
+			otgrpc.OpenTracingStreamClientInterceptor(tracer),
+		),
+	)
+	if err != nil {
+		panic(fmt.Errorf("order service dial host: %s port:%d err: %s",
+			conf.OrderServiceHost, conf.OrderServicePort, err))
+	}
+
+	return order_service.NewOrderServiceClient(connOrder)
 }

@@ -9,21 +9,21 @@ import (
 )
 
 type IStorage interface {
-	Category() repo.ICategoryStorage
+	Order() repo.IOderStorage
 }
 
 type storagePg struct {
-	categoryRepo repo.ICategoryStorage
+	orderRepo repo.IOderStorage
 }
 
 func New(db *gorm.DB) IStorage {
 	fmt.Println("storage ")
 	storage := &storagePg{
-		categoryRepo: postgres.NewCategoryRepo(db),
+		orderRepo: postgres.NewOrderRepo(db),
 	}
 	return storage
 }
 
-func (s storagePg) Category() repo.ICategoryStorage {
-	return s.categoryRepo
+func (s storagePg) Order() repo.IOderStorage {
+	return s.orderRepo
 }

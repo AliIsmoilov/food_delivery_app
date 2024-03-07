@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS orders cascade;
+DROP TABLE IF EXISTS items;

@@ -3,6 +3,7 @@ package handlers
 import (
 	"monorepo/src/api_gateway/handlers/auth_handler"
 	"monorepo/src/api_gateway/handlers/customer_handler"
+	order "monorepo/src/api_gateway/handlers/order_handler"
 	"monorepo/src/api_gateway/handlers/restaurant"
 	"monorepo/src/libs/log"
 
@@ -15,6 +16,7 @@ type Handlers struct {
 	AuthHandlers       auth_handler.AuthHandlers
 	CustomerHandlers   customer_handler.CustomerHandlers
 	RestaurantHandlers restaurant.RestaurantHandler
+	OrderHandlers      order.OrderHandler
 }
 
 // New creates handler
