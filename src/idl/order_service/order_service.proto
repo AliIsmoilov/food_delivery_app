@@ -3,8 +3,8 @@ syntax = "proto3";
 package order_service;
 
 service OrderService {
-    // rpc CreateOrder(Empty) returns (Empty) {}
-    // rpc ListRestaurants(ListRestaurantsReq) returns (ListRestaurantsResp) {}
+    rpc CreateOrder(Order) returns (PrimaryKey) {}
+    rpc OrderList(OrderListReq) returns (OrderListResp) {}
 
     // rpc CreateCategory(Category) returns (PrimaryKey) {}
     // rpc ListCategories(ListCategoriesReq) returns (ListCategoriesResp) {}
@@ -14,4 +14,40 @@ service OrderService {
 }
 
 message Empty { 
+}
+
+message PrimaryKey {
+    string id = 1;
+}
+
+message Order {
+    string id = 1;
+    string code = 2;
+    string note = 3;
+    uint32 total_price = 4;
+    string status = 5;
+    string restaurant_id = 6;
+    string customer_id = 7;
+    string courier_id = 8;
+    string adress = 9;
+    float lat = 10;
+    float long = 11;
+    repeated Item items = 12;
+}
+
+message Item {
+    string id = 1;
+    string item_id = 2;
+    string order_id = 3;
+    uint32 qty = 4;
+    uint32 price = 5;
+}
+
+message OrderListReq {
+    string status = 1;
+}
+
+message OrderListResp {
+    uint32 count = 1;
+    repeated Order orders = 2;
 }

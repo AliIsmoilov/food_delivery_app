@@ -11,3 +11,6 @@ p, unauthorized, /api/restaurant/items/, GET
 
 
 p, unauthorized, /api/customer/sign-up-login/, POST
+
+p, unauthorized, /api/order/, POST
+p, unauthorized, /api/order/, GET

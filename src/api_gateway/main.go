@@ -66,6 +66,7 @@ func main() {
 			routers.RegisterAuthRoutes,
 			routers.RegisterCustomerRoutes,
 			routers.RegisterRestaurantRoutes,
+			routers.RegisterOrderRoutes,
 		),
 
 		fx.WithLogger(
