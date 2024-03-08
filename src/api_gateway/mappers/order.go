@@ -29,3 +29,17 @@ func ToOrderItem(item models.OrderItem) *pb.Item {
 		Qty:    item.Qty,
 	}
 }
+
+func ToCourierProto(req models.Courier) *pb.Courier {
+	return &pb.Courier{
+		Id:          req.ID,
+		Name:        req.Name,
+		PhoneNumber: req.PhoneNumber,
+		Photo:       req.Photo,
+		CarModel:    req.CarModel,
+		CarNumber:   req.CarNumber,
+		CarColor:    req.CarColor,
+		Lat:         req.Lat,
+		Long:        req.Long,
+	}
+}

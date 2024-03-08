@@ -7,10 +7,10 @@ service OrderService {
     rpc OrderList(OrderListReq) returns (OrderListResp) {}
 
     rpc CreateCourier(Courier) returns (PrimaryKey) {}
-    // rpc CourierList(CourierListReq) returns (CourierListResp) {}
-    // rpc UpdateCourier(Courier) returns (Empty) {}
-    // rpc DeleteCourier(PrimaryKey) returns (Empty) {}
-    // rpc GetCourier(PrimaryKey) returns (Courier) {}
+    rpc CourierList(CourierListReq) returns (CourierListResp) {}
+    rpc UpdateCourier(Courier) returns (Empty) {}
+    rpc DeleteCourier(PrimaryKey) returns (Empty) {}
+    rpc GetCourier(PrimaryKey) returns (Courier) {}
 
 
     // rpc CreateItem(Item) returns (PrimaryKey) {}

@@ -734,7 +734,7 @@ var file_src_idl_order_service_order_service_proto_rawDesc = []byte{
 	0x75, 0x6e, 0x74, 0x12, 0x32, 0x0a, 0x08, 0x63, 0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x73, 0x18,
 	0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x52, 0x08, 0x63,
-	0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x73, 0x32, 0xe0, 0x01, 0x0a, 0x0c, 0x4f, 0x72, 0x64, 0x65,
+	0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x73, 0x32, 0xf8, 0x03, 0x0a, 0x0c, 0x4f, 0x72, 0x64, 0x65,
 	0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x40, 0x0a, 0x0b, 0x43, 0x72, 0x65, 0x61,
 	0x74, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x14, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x1a, 0x19, 0x2e,
@@ -748,8 +748,25 @@ var file_src_idl_order_service_order_service_proto_rawDesc = []byte{
 	0x75, 0x72, 0x69, 0x65, 0x72, 0x12, 0x16, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x1a, 0x19, 0x2e,
 	0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x50, 0x72,
-	0x69, 0x6d, 0x61, 0x72, 0x79, 0x4b, 0x65, 0x79, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x69, 0x6d, 0x61, 0x72, 0x79, 0x4b, 0x65, 0x79, 0x22, 0x00, 0x12, 0x4e, 0x0a, 0x0b, 0x43, 0x6f,
+	0x75, 0x72, 0x69, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x1d, 0x2e, 0x6f, 0x72, 0x64, 0x65,
+	0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x6f, 0x75, 0x72, 0x69, 0x65,
+	0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x1a, 0x1e, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72,
+	0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x6f, 0x75, 0x72, 0x69, 0x65, 0x72,
+	0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x22, 0x00, 0x12, 0x3f, 0x0a, 0x0d, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x12, 0x16, 0x2e, 0x6f, 0x72,
+	0x64, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x6f, 0x75, 0x72,
+	0x69, 0x65, 0x72, 0x1a, 0x14, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x42, 0x0a, 0x0d, 0x44,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x12, 0x19, 0x2e, 0x6f,
+	0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x50, 0x72, 0x69,
+	0x6d, 0x61, 0x72, 0x79, 0x4b, 0x65, 0x79, 0x1a, 0x14, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12,
+	0x41, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x12, 0x19, 0x2e,
+	0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x50, 0x72,
+	0x69, 0x6d, 0x61, 0x72, 0x79, 0x4b, 0x65, 0x79, 0x1a, 0x16, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72,
+	0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x6f, 0x75, 0x72, 0x69, 0x65, 0x72,
+	0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -777,20 +794,28 @@ var file_src_idl_order_service_order_service_proto_goTypes = []interface{}{
 	(*CourierListResp)(nil), // 8: order_service.CourierListResp
 }
 var file_src_idl_order_service_order_service_proto_depIdxs = []int32{
-	3, // 0: order_service.Order.items:type_name -> order_service.Item
-	2, // 1: order_service.OrderListResp.orders:type_name -> order_service.Order
-	6, // 2: order_service.CourierListResp.couriers:type_name -> order_service.Courier
-	2, // 3: order_service.OrderService.CreateOrder:input_type -> order_service.Order
-	4, // 4: order_service.OrderService.OrderList:input_type -> order_service.OrderListReq
-	6, // 5: order_service.OrderService.CreateCourier:input_type -> order_service.Courier
-	1, // 6: order_service.OrderService.CreateOrder:output_type -> order_service.PrimaryKey
-	5, // 7: order_service.OrderService.OrderList:output_type -> order_service.OrderListResp
-	1, // 8: order_service.OrderService.CreateCourier:output_type -> order_service.PrimaryKey
-	6, // [6:9] is the sub-list for method output_type
-	3, // [3:6] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	3,  // 0: order_service.Order.items:type_name -> order_service.Item
+	2,  // 1: order_service.OrderListResp.orders:type_name -> order_service.Order
+	6,  // 2: order_service.CourierListResp.couriers:type_name -> order_service.Courier
+	2,  // 3: order_service.OrderService.CreateOrder:input_type -> order_service.Order
+	4,  // 4: order_service.OrderService.OrderList:input_type -> order_service.OrderListReq
+	6,  // 5: order_service.OrderService.CreateCourier:input_type -> order_service.Courier
+	7,  // 6: order_service.OrderService.CourierList:input_type -> order_service.CourierListReq
+	6,  // 7: order_service.OrderService.UpdateCourier:input_type -> order_service.Courier
+	1,  // 8: order_service.OrderService.DeleteCourier:input_type -> order_service.PrimaryKey
+	1,  // 9: order_service.OrderService.GetCourier:input_type -> order_service.PrimaryKey
+	1,  // 10: order_service.OrderService.CreateOrder:output_type -> order_service.PrimaryKey
+	5,  // 11: order_service.OrderService.OrderList:output_type -> order_service.OrderListResp
+	1,  // 12: order_service.OrderService.CreateCourier:output_type -> order_service.PrimaryKey
+	8,  // 13: order_service.OrderService.CourierList:output_type -> order_service.CourierListResp
+	0,  // 14: order_service.OrderService.UpdateCourier:output_type -> order_service.Empty
+	0,  // 15: order_service.OrderService.DeleteCourier:output_type -> order_service.Empty
+	6,  // 16: order_service.OrderService.GetCourier:output_type -> order_service.Courier
+	10, // [10:17] is the sub-list for method output_type
+	3,  // [3:10] is the sub-list for method input_type
+	3,  // [3:3] is the sub-list for extension type_name
+	3,  // [3:3] is the sub-list for extension extendee
+	0,  // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_src_idl_order_service_order_service_proto_init() }
@@ -943,6 +968,10 @@ type OrderServiceClient interface {
 	CreateOrder(ctx context.Context, in *Order, opts ...grpc.CallOption) (*PrimaryKey, error)
 	OrderList(ctx context.Context, in *OrderListReq, opts ...grpc.CallOption) (*OrderListResp, error)
 	CreateCourier(ctx context.Context, in *Courier, opts ...grpc.CallOption) (*PrimaryKey, error)
+	CourierList(ctx context.Context, in *CourierListReq, opts ...grpc.CallOption) (*CourierListResp, error)
+	UpdateCourier(ctx context.Context, in *Courier, opts ...grpc.CallOption) (*Empty, error)
+	DeleteCourier(ctx context.Context, in *PrimaryKey, opts ...grpc.CallOption) (*Empty, error)
+	GetCourier(ctx context.Context, in *PrimaryKey, opts ...grpc.CallOption) (*Courier, error)
 }
 
 type orderServiceClient struct {
@@ -980,11 +1009,51 @@ func (c *orderServiceClient) CreateCourier(ctx context.Context, in *Courier, opt
 	return out, nil
 }
 
+func (c *orderServiceClient) CourierList(ctx context.Context, in *CourierListReq, opts ...grpc.CallOption) (*CourierListResp, error) {
+	out := new(CourierListResp)
+	err := c.cc.Invoke(ctx, "/order_service.OrderService/CourierList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *orderServiceClient) UpdateCourier(ctx context.Context, in *Courier, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/order_service.OrderService/UpdateCourier", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *orderServiceClient) DeleteCourier(ctx context.Context, in *PrimaryKey, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/order_service.OrderService/DeleteCourier", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *orderServiceClient) GetCourier(ctx context.Context, in *PrimaryKey, opts ...grpc.CallOption) (*Courier, error) {
+	out := new(Courier)
+	err := c.cc.Invoke(ctx, "/order_service.OrderService/GetCourier", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OrderServiceServer is the server API for OrderService service.
 type OrderServiceServer interface {
 	CreateOrder(context.Context, *Order) (*PrimaryKey, error)
 	OrderList(context.Context, *OrderListReq) (*OrderListResp, error)
 	CreateCourier(context.Context, *Courier) (*PrimaryKey, error)
+	CourierList(context.Context, *CourierListReq) (*CourierListResp, error)
+	UpdateCourier(context.Context, *Courier) (*Empty, error)
+	DeleteCourier(context.Context, *PrimaryKey) (*Empty, error)
+	GetCourier(context.Context, *PrimaryKey) (*Courier, error)
 }
 
 // UnimplementedOrderServiceServer can be embedded to have forward compatible implementations.
@@ -999,6 +1068,18 @@ func (*UnimplementedOrderServiceServer) OrderList(context.Context, *OrderListReq
 }
 func (*UnimplementedOrderServiceServer) CreateCourier(context.Context, *Courier) (*PrimaryKey, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCourier not implemented")
+}
+func (*UnimplementedOrderServiceServer) CourierList(context.Context, *CourierListReq) (*CourierListResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CourierList not implemented")
+}
+func (*UnimplementedOrderServiceServer) UpdateCourier(context.Context, *Courier) (*Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCourier not implemented")
+}
+func (*UnimplementedOrderServiceServer) DeleteCourier(context.Context, *PrimaryKey) (*Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCourier not implemented")
+}
+func (*UnimplementedOrderServiceServer) GetCourier(context.Context, *PrimaryKey) (*Courier, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCourier not implemented")
 }
 
 func RegisterOrderServiceServer(s *grpc.Server, srv OrderServiceServer) {
@@ -1059,6 +1140,78 @@ func _OrderService_CreateCourier_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OrderService_CourierList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CourierListReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OrderServiceServer).CourierList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/order_service.OrderService/CourierList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OrderServiceServer).CourierList(ctx, req.(*CourierListReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OrderService_UpdateCourier_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Courier)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OrderServiceServer).UpdateCourier(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/order_service.OrderService/UpdateCourier",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OrderServiceServer).UpdateCourier(ctx, req.(*Courier))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OrderService_DeleteCourier_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrimaryKey)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OrderServiceServer).DeleteCourier(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/order_service.OrderService/DeleteCourier",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OrderServiceServer).DeleteCourier(ctx, req.(*PrimaryKey))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OrderService_GetCourier_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrimaryKey)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OrderServiceServer).GetCourier(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/order_service.OrderService/GetCourier",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OrderServiceServer).GetCourier(ctx, req.(*PrimaryKey))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _OrderService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "order_service.OrderService",
 	HandlerType: (*OrderServiceServer)(nil),
@@ -1074,6 +1227,22 @@ var _OrderService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCourier",
 			Handler:    _OrderService_CreateCourier_Handler,
+		},
+		{
+			MethodName: "CourierList",
+			Handler:    _OrderService_CourierList_Handler,
+		},
+		{
+			MethodName: "UpdateCourier",
+			Handler:    _OrderService_UpdateCourier_Handler,
+		},
+		{
+			MethodName: "DeleteCourier",
+			Handler:    _OrderService_DeleteCourier_Handler,
+		},
+		{
+			MethodName: "GetCourier",
+			Handler:    _OrderService_GetCourier_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -181,3 +181,13 @@ func HandleInternalWithMessage(w http.ResponseWriter, err error, message string)
 		}})
 	return err
 }
+
+func HandleBadRequestResponse(w http.ResponseWriter, message string) {
+	log.Println(message)
+	w.WriteHeader(http.StatusBadRequest)
+	writeJSON(w, response{Error: true,
+		Data: errorInfo{
+			Status:  http.StatusBadRequest,
+			Message: message,
+		}})
+}
