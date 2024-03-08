@@ -21,3 +21,15 @@ type OrderItem struct {
 	Qty    uint32 `json:"qty"`
 	Price  uint32 `json:"price"`
 }
+
+type Courier struct {
+	ID          string  `json:"id"`
+	Name        string  `json:"name"`
+	PhoneNumber string  `json:"phone_number"`
+	Photo       string  `json:"photo"`
+	CarModel    string  `json:"car_model"`
+	CarNumber   string  `json:"car_number"`
+	CarColor    string  `json:"car_color"`
+	Lat         float32 `json:"lat"`
+	Long        float32 `json:"long"`
+}

@@ -7,6 +7,8 @@ import (
 	"unicode"
 
 	"strings"
+
+	"github.com/google/uuid"
 )
 
 var emailRegex = regexp.MustCompile("^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")
@@ -81,4 +83,11 @@ func ValidatePassword(p string) error {
 	}
 
 	return nil
+}
+
+func IsUUID(s string) bool {
+	if _, err := uuid.Parse(s); err != nil {
+		return false
+	}
+	return true
 }

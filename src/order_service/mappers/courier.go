@@ -9,9 +9,13 @@ import (
 )
 
 func ToCourierEntity(req *pb.Courier) (entity.Courier, error) {
-	id, err := uuid.Parse(req.Id)
-	if err != nil {
-		return entity.Courier{}, err
+	id := uuid.UUID{}
+	var err error
+	if req.Id != "" {
+		id, err = uuid.Parse(req.Id)
+		if err != nil {
+			return entity.Courier{}, err
+		}
 	}
 	return entity.Courier{
 		ID:          id,
@@ -36,5 +40,13 @@ func ToCourierProto(req entity.Courier) *pb.Courier {
 		IsAvailable: req.IsAvailable,
 		Lat:         req.Latitude,
 		Long:        req.Longitude,
+	}
+}
+
+func ToCourierListReq(req *pb.CourierListReq) entity.CourierListReq {
+	return entity.CourierListReq{
+		Page:   req.Page,
+		Limit:  req.Limit,
+		Search: req.Search,
 	}
 }
