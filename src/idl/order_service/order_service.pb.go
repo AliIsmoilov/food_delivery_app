@@ -425,6 +425,243 @@ func (x *OrderListResp) GetOrders() []*Order {
 	return nil
 }
 
+type Courier struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id          string  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string  `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	PhoneNumber string  `protobuf:"bytes,3,opt,name=phone_number,json=phoneNumber,proto3" json:"phone_number,omitempty"`
+	Photo       string  `protobuf:"bytes,4,opt,name=photo,proto3" json:"photo,omitempty"`
+	CarModel    string  `protobuf:"bytes,5,opt,name=car_model,json=carModel,proto3" json:"car_model,omitempty"`
+	CarNumber   string  `protobuf:"bytes,6,opt,name=car_number,json=carNumber,proto3" json:"car_number,omitempty"`
+	CarColor    string  `protobuf:"bytes,7,opt,name=car_color,json=carColor,proto3" json:"car_color,omitempty"`
+	IsAvailable bool    `protobuf:"varint,8,opt,name=is_available,json=isAvailable,proto3" json:"is_available,omitempty"`
+	Lat         float32 `protobuf:"fixed32,9,opt,name=lat,proto3" json:"lat,omitempty"`
+	Long        float32 `protobuf:"fixed32,10,opt,name=long,proto3" json:"long,omitempty"`
+}
+
+func (x *Courier) Reset() {
+	*x = Courier{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_src_idl_order_service_order_service_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Courier) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Courier) ProtoMessage() {}
+
+func (x *Courier) ProtoReflect() protoreflect.Message {
+	mi := &file_src_idl_order_service_order_service_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Courier.ProtoReflect.Descriptor instead.
+func (*Courier) Descriptor() ([]byte, []int) {
+	return file_src_idl_order_service_order_service_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *Courier) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Courier) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Courier) GetPhoneNumber() string {
+	if x != nil {
+		return x.PhoneNumber
+	}
+	return ""
+}
+
+func (x *Courier) GetPhoto() string {
+	if x != nil {
+		return x.Photo
+	}
+	return ""
+}
+
+func (x *Courier) GetCarModel() string {
+	if x != nil {
+		return x.CarModel
+	}
+	return ""
+}
+
+func (x *Courier) GetCarNumber() string {
+	if x != nil {
+		return x.CarNumber
+	}
+	return ""
+}
+
+func (x *Courier) GetCarColor() string {
+	if x != nil {
+		return x.CarColor
+	}
+	return ""
+}
+
+func (x *Courier) GetIsAvailable() bool {
+	if x != nil {
+		return x.IsAvailable
+	}
+	return false
+}
+
+func (x *Courier) GetLat() float32 {
+	if x != nil {
+		return x.Lat
+	}
+	return 0
+}
+
+func (x *Courier) GetLong() float32 {
+	if x != nil {
+		return x.Long
+	}
+	return 0
+}
+
+type CourierListReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Limit  uint32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Page   uint32 `protobuf:"varint,2,opt,name=page,proto3" json:"page,omitempty"`
+	Search string `protobuf:"bytes,3,opt,name=search,proto3" json:"search,omitempty"`
+}
+
+func (x *CourierListReq) Reset() {
+	*x = CourierListReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_src_idl_order_service_order_service_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CourierListReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CourierListReq) ProtoMessage() {}
+
+func (x *CourierListReq) ProtoReflect() protoreflect.Message {
+	mi := &file_src_idl_order_service_order_service_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CourierListReq.ProtoReflect.Descriptor instead.
+func (*CourierListReq) Descriptor() ([]byte, []int) {
+	return file_src_idl_order_service_order_service_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *CourierListReq) GetLimit() uint32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *CourierListReq) GetPage() uint32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *CourierListReq) GetSearch() string {
+	if x != nil {
+		return x.Search
+	}
+	return ""
+}
+
+type CourierListResp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Count    int32      `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+	Couriers []*Courier `protobuf:"bytes,2,rep,name=couriers,proto3" json:"couriers,omitempty"`
+}
+
+func (x *CourierListResp) Reset() {
+	*x = CourierListResp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_src_idl_order_service_order_service_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CourierListResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CourierListResp) ProtoMessage() {}
+
+func (x *CourierListResp) ProtoReflect() protoreflect.Message {
+	mi := &file_src_idl_order_service_order_service_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CourierListResp.ProtoReflect.Descriptor instead.
+func (*CourierListResp) Descriptor() ([]byte, []int) {
+	return file_src_idl_order_service_order_service_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *CourierListResp) GetCount() int32 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
+}
+
+func (x *CourierListResp) GetCouriers() []*Courier {
+	if x != nil {
+		return x.Couriers
+	}
+	return nil
+}
+
 var File_src_idl_order_service_order_service_proto protoreflect.FileDescriptor
 
 var file_src_idl_order_service_order_service_proto_rawDesc = []byte{
@@ -469,17 +706,50 @@ var file_src_idl_order_service_order_service_proto_rawDesc = []byte{
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x2c, 0x0a,
 	0x06, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e,
 	0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4f, 0x72,
-	0x64, 0x65, 0x72, 0x52, 0x06, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x32, 0x9a, 0x01, 0x0a, 0x0c,
-	0x4f, 0x72, 0x64, 0x65, 0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x40, 0x0a, 0x0b,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x14, 0x2e, 0x6f, 0x72,
-	0x64, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4f, 0x72, 0x64, 0x65,
-	0x72, 0x1a, 0x19, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x2e, 0x50, 0x72, 0x69, 0x6d, 0x61, 0x72, 0x79, 0x4b, 0x65, 0x79, 0x22, 0x00, 0x12, 0x48,
-	0x0a, 0x09, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x1b, 0x2e, 0x6f, 0x72,
-	0x64, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4f, 0x72, 0x64, 0x65,
-	0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x1a, 0x1c, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72,
-	0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x4c, 0x69,
-	0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x64, 0x65, 0x72, 0x52, 0x06, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x22, 0x88, 0x02, 0x0a, 0x07,
+	0x43, 0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x21, 0x0a, 0x0c, 0x70,
+	0x68, 0x6f, 0x6e, 0x65, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0b, 0x70, 0x68, 0x6f, 0x6e, 0x65, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x14,
+	0x0a, 0x05, 0x70, 0x68, 0x6f, 0x74, 0x6f, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x70,
+	0x68, 0x6f, 0x74, 0x6f, 0x12, 0x1b, 0x0a, 0x09, 0x63, 0x61, 0x72, 0x5f, 0x6d, 0x6f, 0x64, 0x65,
+	0x6c, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x63, 0x61, 0x72, 0x4d, 0x6f, 0x64, 0x65,
+	0x6c, 0x12, 0x1d, 0x0a, 0x0a, 0x63, 0x61, 0x72, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18,
+	0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x63, 0x61, 0x72, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72,
+	0x12, 0x1b, 0x0a, 0x09, 0x63, 0x61, 0x72, 0x5f, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x18, 0x07, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x08, 0x63, 0x61, 0x72, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x12, 0x21, 0x0a,
+	0x0c, 0x69, 0x73, 0x5f, 0x61, 0x76, 0x61, 0x69, 0x6c, 0x61, 0x62, 0x6c, 0x65, 0x18, 0x08, 0x20,
+	0x01, 0x28, 0x08, 0x52, 0x0b, 0x69, 0x73, 0x41, 0x76, 0x61, 0x69, 0x6c, 0x61, 0x62, 0x6c, 0x65,
+	0x12, 0x10, 0x0a, 0x03, 0x6c, 0x61, 0x74, 0x18, 0x09, 0x20, 0x01, 0x28, 0x02, 0x52, 0x03, 0x6c,
+	0x61, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6c, 0x6f, 0x6e, 0x67, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x02,
+	0x52, 0x04, 0x6c, 0x6f, 0x6e, 0x67, 0x22, 0x52, 0x0a, 0x0e, 0x43, 0x6f, 0x75, 0x72, 0x69, 0x65,
+	0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69,
+	0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x12,
+	0x0a, 0x04, 0x70, 0x61, 0x67, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x70, 0x61,
+	0x67, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x22, 0x5b, 0x0a, 0x0f, 0x43, 0x6f,
+	0x75, 0x72, 0x69, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x12, 0x14, 0x0a,
+	0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x63, 0x6f,
+	0x75, 0x6e, 0x74, 0x12, 0x32, 0x0a, 0x08, 0x63, 0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x73, 0x18,
+	0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x52, 0x08, 0x63,
+	0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x73, 0x32, 0xe0, 0x01, 0x0a, 0x0c, 0x4f, 0x72, 0x64, 0x65,
+	0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x40, 0x0a, 0x0b, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x14, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x1a, 0x19, 0x2e,
+	0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x50, 0x72,
+	0x69, 0x6d, 0x61, 0x72, 0x79, 0x4b, 0x65, 0x79, 0x22, 0x00, 0x12, 0x48, 0x0a, 0x09, 0x4f, 0x72,
+	0x64, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x1b, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x4c, 0x69, 0x73,
+	0x74, 0x52, 0x65, 0x71, 0x1a, 0x1c, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x2e, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65,
+	0x73, 0x70, 0x22, 0x00, 0x12, 0x44, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f,
+	0x75, 0x72, 0x69, 0x65, 0x72, 0x12, 0x16, 0x2e, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x6f, 0x75, 0x72, 0x69, 0x65, 0x72, 0x1a, 0x19, 0x2e,
+	0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x50, 0x72,
+	0x69, 0x6d, 0x61, 0x72, 0x79, 0x4b, 0x65, 0x79, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -494,27 +764,33 @@ func file_src_idl_order_service_order_service_proto_rawDescGZIP() []byte {
 	return file_src_idl_order_service_order_service_proto_rawDescData
 }
 
-var file_src_idl_order_service_order_service_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_src_idl_order_service_order_service_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_src_idl_order_service_order_service_proto_goTypes = []interface{}{
-	(*Empty)(nil),         // 0: order_service.Empty
-	(*PrimaryKey)(nil),    // 1: order_service.PrimaryKey
-	(*Order)(nil),         // 2: order_service.Order
-	(*Item)(nil),          // 3: order_service.Item
-	(*OrderListReq)(nil),  // 4: order_service.OrderListReq
-	(*OrderListResp)(nil), // 5: order_service.OrderListResp
+	(*Empty)(nil),           // 0: order_service.Empty
+	(*PrimaryKey)(nil),      // 1: order_service.PrimaryKey
+	(*Order)(nil),           // 2: order_service.Order
+	(*Item)(nil),            // 3: order_service.Item
+	(*OrderListReq)(nil),    // 4: order_service.OrderListReq
+	(*OrderListResp)(nil),   // 5: order_service.OrderListResp
+	(*Courier)(nil),         // 6: order_service.Courier
+	(*CourierListReq)(nil),  // 7: order_service.CourierListReq
+	(*CourierListResp)(nil), // 8: order_service.CourierListResp
 }
 var file_src_idl_order_service_order_service_proto_depIdxs = []int32{
 	3, // 0: order_service.Order.items:type_name -> order_service.Item
 	2, // 1: order_service.OrderListResp.orders:type_name -> order_service.Order
-	2, // 2: order_service.OrderService.CreateOrder:input_type -> order_service.Order
-	4, // 3: order_service.OrderService.OrderList:input_type -> order_service.OrderListReq
-	1, // 4: order_service.OrderService.CreateOrder:output_type -> order_service.PrimaryKey
-	5, // 5: order_service.OrderService.OrderList:output_type -> order_service.OrderListResp
-	4, // [4:6] is the sub-list for method output_type
-	2, // [2:4] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	6, // 2: order_service.CourierListResp.couriers:type_name -> order_service.Courier
+	2, // 3: order_service.OrderService.CreateOrder:input_type -> order_service.Order
+	4, // 4: order_service.OrderService.OrderList:input_type -> order_service.OrderListReq
+	6, // 5: order_service.OrderService.CreateCourier:input_type -> order_service.Courier
+	1, // 6: order_service.OrderService.CreateOrder:output_type -> order_service.PrimaryKey
+	5, // 7: order_service.OrderService.OrderList:output_type -> order_service.OrderListResp
+	1, // 8: order_service.OrderService.CreateCourier:output_type -> order_service.PrimaryKey
+	6, // [6:9] is the sub-list for method output_type
+	3, // [3:6] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_src_idl_order_service_order_service_proto_init() }
@@ -595,6 +871,42 @@ func file_src_idl_order_service_order_service_proto_init() {
 				return nil
 			}
 		}
+		file_src_idl_order_service_order_service_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Courier); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_src_idl_order_service_order_service_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CourierListReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_src_idl_order_service_order_service_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CourierListResp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -602,7 +914,7 @@ func file_src_idl_order_service_order_service_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_src_idl_order_service_order_service_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -630,6 +942,7 @@ const _ = grpc.SupportPackageIsVersion6
 type OrderServiceClient interface {
 	CreateOrder(ctx context.Context, in *Order, opts ...grpc.CallOption) (*PrimaryKey, error)
 	OrderList(ctx context.Context, in *OrderListReq, opts ...grpc.CallOption) (*OrderListResp, error)
+	CreateCourier(ctx context.Context, in *Courier, opts ...grpc.CallOption) (*PrimaryKey, error)
 }
 
 type orderServiceClient struct {
@@ -658,10 +971,20 @@ func (c *orderServiceClient) OrderList(ctx context.Context, in *OrderListReq, op
 	return out, nil
 }
 
+func (c *orderServiceClient) CreateCourier(ctx context.Context, in *Courier, opts ...grpc.CallOption) (*PrimaryKey, error) {
+	out := new(PrimaryKey)
+	err := c.cc.Invoke(ctx, "/order_service.OrderService/CreateCourier", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OrderServiceServer is the server API for OrderService service.
 type OrderServiceServer interface {
 	CreateOrder(context.Context, *Order) (*PrimaryKey, error)
 	OrderList(context.Context, *OrderListReq) (*OrderListResp, error)
+	CreateCourier(context.Context, *Courier) (*PrimaryKey, error)
 }
 
 // UnimplementedOrderServiceServer can be embedded to have forward compatible implementations.
@@ -673,6 +996,9 @@ func (*UnimplementedOrderServiceServer) CreateOrder(context.Context, *Order) (*P
 }
 func (*UnimplementedOrderServiceServer) OrderList(context.Context, *OrderListReq) (*OrderListResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OrderList not implemented")
+}
+func (*UnimplementedOrderServiceServer) CreateCourier(context.Context, *Courier) (*PrimaryKey, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCourier not implemented")
 }
 
 func RegisterOrderServiceServer(s *grpc.Server, srv OrderServiceServer) {
@@ -715,6 +1041,24 @@ func _OrderService_OrderList_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OrderService_CreateCourier_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Courier)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OrderServiceServer).CreateCourier(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/order_service.OrderService/CreateCourier",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OrderServiceServer).CreateCourier(ctx, req.(*Courier))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _OrderService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "order_service.OrderService",
 	HandlerType: (*OrderServiceServer)(nil),
@@ -726,6 +1070,10 @@ var _OrderService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "OrderList",
 			Handler:    _OrderService_OrderList_Handler,
+		},
+		{
+			MethodName: "CreateCourier",
+			Handler:    _OrderService_CreateCourier_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

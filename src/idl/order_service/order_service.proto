@@ -6,8 +6,12 @@ service OrderService {
     rpc CreateOrder(Order) returns (PrimaryKey) {}
     rpc OrderList(OrderListReq) returns (OrderListResp) {}
 
-    // rpc CreateCategory(Category) returns (PrimaryKey) {}
-    // rpc ListCategories(ListCategoriesReq) returns (ListCategoriesResp) {}
+    rpc CreateCourier(Courier) returns (PrimaryKey) {}
+    // rpc CourierList(CourierListReq) returns (CourierListResp) {}
+    // rpc UpdateCourier(Courier) returns (Empty) {}
+    // rpc DeleteCourier(PrimaryKey) returns (Empty) {}
+    // rpc GetCourier(PrimaryKey) returns (Courier) {}
+
 
     // rpc CreateItem(Item) returns (PrimaryKey) {}
     // rpc RestaurantItemsGroupedByCategory(RestaurantItemsGroupedByCategoryReq) returns (RestaurantItemsGroupedByCategoryResp) {}
@@ -50,4 +54,28 @@ message OrderListReq {
 message OrderListResp {
     uint32 count = 1;
     repeated Order orders = 2;
+}
+
+message Courier {
+    string id = 1;
+    string name = 2;
+    string phone_number = 3;
+    string photo = 4;
+    string car_model = 5;
+    string car_number = 6;
+    string car_color = 7;
+    bool is_available = 8;
+    float lat = 9;
+    float long = 10;
+}
+
+message CourierListReq {
+    uint32 limit = 1;
+    uint32 page = 2;
+    string search = 3;
+}
+
+message CourierListResp {
+    int32 count = 1;
+    repeated Courier couriers = 2;
 }
